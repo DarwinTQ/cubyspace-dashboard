@@ -1,73 +1,133 @@
-# Welcome to your Lovable project
+# Cubyspace Dashboard
 
-## Project info
+Dashboard moderno y responsivo para Cubyspace, una plataforma de monitoreo y análisis de datos en tiempo real.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Descripción del Proyecto
 
-## How can I edit this code?
+Cubyspace Dashboard es la interfaz web principal para visualizar, analizar y gestionar datos de sensores y sistemas conectados. Proporciona una experiencia de usuario intuitiva con características avanzadas de visualización de datos.
 
-There are several ways of editing your application.
+## Requisitos
 
-**Use Lovable**
+- Node.js 16+ (con npm o tu gestor de paquetes preferido)
+- Git
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Instalación y Configuración
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### 1. Clonar el repositorio
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
+cd cubyspace-dashboard
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2. Instalar dependencias
 
-# Step 3: Install the necessary dependencies.
-npm i
+```sh
+npm install
+# o si prefieres usar yarn
+yarn install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 3. Iniciar el servidor de desarrollo
+
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+El servidor estará disponible en `http://localhost:5173` (o el puerto que configure Vite).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 4. Compilar para producción
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Los archivos compilados se ubicarán en la carpeta `dist/`.
 
-## What technologies are used for this project?
+## Stack Tecnológico
 
-This project is built with:
+Este proyecto está construido con:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Herramienta de construcción y servidor de desarrollo rápido
+- **TypeScript** - Lenguaje tipado para mejor mantenibilidad
+- **React 18** - Librería UI declarativa
+- **shadcn-ui** - Componentes accesibles y personalizables
+- **Tailwind CSS** - Framework CSS de utilidades
+- **Recharts** - Librería para gráficos interactivos
+- **Vitest** - Framework de testing moderno
 
-## How can I deploy this project?
+## Estructura del Proyecto
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```
+src/
+├── components/          # Componentes reutilizables
+│   ├── dashboard/       # Componentes específicos del dashboard
+│   ├── ui/             # Componentes UI base
+│   └── NavLink.tsx     # Navegación
+├── hooks/              # Custom React hooks
+├── pages/              # Páginas de la aplicación
+├── lib/                # Utilidades y funciones auxiliares
+├── styles/             # Estilos globales
+└── main.tsx            # Punto de entrada
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Desarrollo Local
 
-Yes, you can!
+Para trabajar localmente en el proyecto:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Clona el repositorio
+2. Instala las dependencias con `npm install`
+3. Inicia el servidor de desarrollo con `npm run dev`
+4. Realiza tus cambios en los archivos fuente
+5. Los cambios se recargarán automáticamente en el navegador
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Testing
+
+Para ejecutar las pruebas unitarias:
+
+```sh
+npm run test
+```
+
+## Construcción y Deploy
+
+### Construir la aplicación
+
+```sh
+npm run build
+```
+
+Esto generará los archivos optimizados en la carpeta `dist/`.
+
+### Desplegar a producción
+
+El proyecto puede desplegarse en cualquier servidor web estático o plataforma compatible (Vercel, Netlify, GitHub Pages, etc.):
+
+1. Asegúrate de que la construcción sea exitosa con `npm run build`
+2. Sube los archivos de `dist/` a tu servidor de hosting
+3. Configura las rutas para redirigir a `index.html` (necesario para SPA)
+
+## Características Principales
+
+- 📊 **Visualización de Datos** - Gráficos interactivos en tiempo real
+- 📱 **Diseño Responsivo** - Funciona perfectamente en dispositivos móviles y desktop
+- ♿ **Accesibilidad** - Componentes accesibles siguiendo estándares WCAG
+- 🎨 **Personalizable** - Tema y estilos adaptables
+- ⚡ **Alto Rendimiento** - Optimizado con Vite y React
+
+## Contribución
+
+Si deseas contribuir al proyecto:
+
+1. Crea una rama para tu feature (`git checkout -b feature/mi-feature`)
+2. Realiza tus cambios y commits
+3. Haz push a la rama (`git push origin feature/mi-feature`)
+4. Abre un Pull Request
+
+## Licencia
+
+Este proyecto es parte de Cubyspace.
+
+## Soporte
+
+Para reportar bugs o sugerencias, por favor abre un issue en el repositorio.
