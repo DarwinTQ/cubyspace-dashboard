@@ -1,3 +1,5 @@
+/* Todo este bloque está comentado.
+
 import { useState } from "react";
 import { Menu, Wifi, Home, Settings } from "lucide-react";
 import SensorChart from "@/components/dashboard/SensorChart";
@@ -26,12 +28,12 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      {/* Header */}
+      {/* Header *//*}
       <header className="bg-header-bg border-b-2 border-border py-3 text-center">
         <h1 className="text-lg font-bold tracking-wide text-foreground">Dashboard</h1>
       </header>
 
-      {/* Nav Bar */}
+      {/* Nav Bar *//*}
       <nav className="flex items-center justify-between border-b-2 border-border bg-card px-4 py-2">
         <div className="flex items-center gap-2">
           <Menu className="h-5 w-5 text-foreground" />
@@ -54,14 +56,14 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Main Content */}
+      {/* Main Content *//*}
       <main className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
-        {/* Chart — ocupa 2/3 */}
+        {/* Chart — ocupa 2/3 *//*}
         <div className="lg:col-span-2">
           <SensorChart data={chartData} title="Datos del Sensor en Tiempo Real (Ejemplo)" />
         </div>
 
-        {/* Data Indicators — ocupa 1/3 */}
+        {/* Data Indicators — ocupa 1/3 *//*}
         <div className="flex flex-col gap-3">
           {indicatorConfig.map((cfg) => (
             <DataIndicator
@@ -74,7 +76,93 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footer *//*}
+      <SensorFooter />
+    </div>
+  );
+};
+
+export default Index;
+*/
+
+//Posible cambio con el encabezado
+import { useState } from "react";
+import { Menu, Wifi, Home, Settings } from "lucide-react";
+import SensorChart from "@/components/dashboard/SensorChart";
+import DataIndicator, { indicatorConfig } from "@/components/dashboard/DataIndicator";
+import SensorFooter from "@/components/dashboard/SensorFooter";
+
+const generateInitialData = () =>
+  Array.from({ length: 20 }, (_, i) => ({
+    time: i,
+    value: Math.max(5, 90 - i * 4 + Math.random() * 8 - 4),
+  }));
+
+const Index = () => {
+  const [chartData, setChartData] = useState(generateInitialData);
+  const [sensorValues] = useState({
+    battery: 20,
+    pressure: 20,
+    temperature: 20,
+    altitude: 25,
+  });
+  const [isOnline, setIsOnline] = useState(true);
+
+  return (
+    <div className="flex flex-col min-h-screen bg-background p-2">
+      {/* Header / Nav Estilo Imagen */}
+      <nav className="flex flex-col gap-4 mb-4">
+        
+        {/* Fila Superior: Logo, Status y Settings */}
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo/Nombre */}
+          <div className="bg-[#f8d7da] border border-[#dc3545] rounded px-8 py-3 min-w-[200px] text-center">
+            <span className="text-black font-medium">CubySpace - AQP</span>
+          </div>
+
+          {/* Status Central */}
+          <button 
+            onClick={() => setIsOnline(!isOnline)}
+            className="flex-1 bg-[#f8d7da] border border-[#dc3545] rounded py-3 flex items-center justify-center gap-2 hover:bg-[#f1b9bc] transition-colors"
+          >
+            <span className="text-black font-medium">Status: {isOnline ? "On" : "Off"}</span>
+            <Wifi className="h-5 w-5 text-gray-700" />
+          </button>
+
+          {/* Settings Derecha */}
+          <button className="bg-[#ff6600] border border-[#cc5200] rounded px-10 py-3 text-black font-medium hover:bg-[#e65c00] transition-colors">
+            Settings
+          </button>
+        </div>
+
+        {/* Fila de Fases (Basado en tu imagen) */}
+        <div className="grid grid-cols-5 gap-2">
+          {["Fase 1", "Fase 2 / liberado", "Fase 3 / Desacoplado", "Fase 4", "Fase 5"].map((fase) => (
+            <div key={fase} className="bg-[#f8d7da] border border-[#dc3545] rounded py-2 text-center text-sm text-black">
+              {fase}
+            </div>
+          ))}
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="lg:col-span-2">
+          <SensorChart data={chartData} title="Datos del Sensor en Tiempo Real (Ejemplo)" />
+        </div>
+
+        <div className="flex flex-col gap-3">
+          {indicatorConfig.map((cfg) => (
+            <DataIndicator
+              key={cfg.key}
+              icon={cfg.icon}
+              label={cfg.label}
+              value={`${sensorValues[cfg.key]}${cfg.suffix}`}
+            />
+          ))}
+        </div>
+      </main>
+
       <SensorFooter />
     </div>
   );
