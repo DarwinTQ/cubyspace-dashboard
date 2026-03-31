@@ -147,7 +147,7 @@ export default Index;
 
 
 
-
+// te gusta diana ? si no te gusta gusta eres kbr
 
 
 
