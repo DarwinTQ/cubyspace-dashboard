@@ -147,7 +147,7 @@ export default Index;
 
 // waaaaa 
 
-
+//Lo primero es hacer git pull, para ponerse al dia xd 
 
 
 
