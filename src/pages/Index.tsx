@@ -85,7 +85,7 @@ const Index = () => {
         </div>
 
         {/* Gráfico 2 */}    
-        <div className="lg:col-span-2 w-full h-[65vh]">  {/*Comentario, use 'h-[65vh]' para la escabilidad del porcentaje de la pantalla*/} 
+        <div className="lg:col-span-2 w-full h-[65vh]">  {/*Comentario, use 'h-[65vh]' para la escabilidad del porcentaje de la pantalla, con el fin de que se vea proporcional a cualquier tipo de pantalla*/} 
           <SensorChart
             data={chartData2}
             title="Datos del Sensor en Tiempo Real (Ejemplo 2)"
