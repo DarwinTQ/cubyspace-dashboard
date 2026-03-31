@@ -121,6 +121,7 @@ const Index = () => {
 };
 
 export default Index;
+
 //
 
 
@@ -142,12 +143,12 @@ export default Index;
 
 
 
+//Wazzaaaa
 
 
 
 
 
-// te gusta diana ? si no te gusta gusta eres kbr
 
 
 
