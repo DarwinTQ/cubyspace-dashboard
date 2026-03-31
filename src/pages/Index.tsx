@@ -121,3 +121,5 @@ const Index = () => {
 };
 
 export default Index;
+
+// este código es el componente principal de la página de inicio del dashboard de CubySpace. Contiene un header con el título y botones de estado y configuración, dos gráficos de sensores en tiempo real, indicadores de datos clave, un footer con información adicional y una sección para predicciones basadas en machine learning o deep learning. El diseño es responsivo y utiliza Tailwind CSS para estilos rápidos y consistentes.
