@@ -73,7 +73,7 @@ const Index = () => {
         </div>
 
         {/* Indicadores */}
-        <div className="lg:col-span-1 flex flex-col gap-3 h-[230px] justify-center">
+        <div className="lg:col-span-1 flex flex-col gap-3 h-[230px] justify-center items-center">
           {indicatorConfig.map((cfg) => (
             <DataIndicator
               key={cfg.key}

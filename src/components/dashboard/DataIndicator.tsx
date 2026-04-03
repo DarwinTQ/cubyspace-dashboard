@@ -9,7 +9,7 @@ interface DataIndicatorProps {
 
 const DataIndicator = ({ icon: Icon, label, value }: DataIndicatorProps) => {
   return (
-    <div className="flex items-center gap-3 bg-sensor border-2 border-border rounded-md px-4 py-3">
+    <div className="flex items-center gap-2 bg-sensor border-2 border-border rounded-md px-2 py-2 w-fit">
       <Icon className="h-5 w-5 text-sensor-foreground shrink-0" />
       <span className="text-sm font-medium text-sensor-foreground">
         {label} <span className="font-bold">{value}</span>
